@@ -15,7 +15,8 @@ export class RegisterSauceDemo {
         this.password = page.locator('#password');
         this.firstName = page.locator('#first_name');
         this.lastName = page.locator('#last_name');
-        //se usa page.getByRole() para el boton "Create" y la opcion "Sign up"
+        /*se usa page.getByRole() para el boton "Create" y la opcion "Sign up"
+        y para los textbox ya que se generan conflictos con los .locator()*/
         this.registerButton = page.getByRole('button', {name: 'Create'});
     }
 
