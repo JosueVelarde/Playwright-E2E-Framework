@@ -20,3 +20,7 @@ Este proyecto es un framework de automatización de pruebas de extremo a extremo
 ```bash
    git clone [https://github.com/JosueVelarde/Playwright-E2E-Framework.git](https://github.com/JosueVelarde/Playwright-E2E-Framework.git)
    cd Playwright-E2E-Framework
+
+## Comandos que se utlizan
+
+- npx playwright test (Para ejecutar test)
