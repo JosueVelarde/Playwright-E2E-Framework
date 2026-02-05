@@ -11,12 +11,11 @@ export class RegisterSauceDemo {
     constructor(page:Page){
         this.page = page;
         //se usa page.locator() ya que dicha pagina no usan data-set
-        this.email = page.locator('#email');
-        this.password = page.locator('#password');
-        this.firstName = page.locator('#first_name');
-        this.lastName = page.locator('#last_name');
-        /*se usa page.getByRole() para el boton "Create" y la opcion "Sign up"
-        y para los textbox ya que se generan conflictos con los .locator()*/
+        this.email = page.locator('input[name="customer[email]"]');
+        this.password = page.locator('input[name="customer[password]"]');
+        this.firstName = page.locator('input[name="customer[first_name]"]');
+        this.lastName = page.locator('input[name="customer[last_name]"]');
+        //se usa page.getByRole() para el boton "Create"
         this.registerButton = page.getByRole('button', {name: 'Create'});
     }
 
