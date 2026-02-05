@@ -7,6 +7,7 @@ export class RegisterSauceDemo {
     readonly registerButton: Locator;
     readonly firstName:Locator;
     readonly lastName:Locator;
+    readonly errorMessage:Locator;
 
     constructor(page:Page){
         this.page = page;
@@ -15,6 +16,7 @@ export class RegisterSauceDemo {
         this.password = page.locator('input[name="customer[password]"]');
         this.firstName = page.locator('input[name="customer[first_name]"]');
         this.lastName = page.locator('input[name="customer[last_name]"]');
+        this.errorMessage = page.locator('.errors ul li');
         //se usa page.getByRole() para el boton "Create"
         this.registerButton = page.getByRole('button', {name: 'Create'});
     }
