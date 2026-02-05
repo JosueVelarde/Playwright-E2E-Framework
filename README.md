@@ -14,9 +14,12 @@ Este proyecto es un framework de automatización de pruebas de extremo a extremo
 - [x] Flujo completo de compra (Checkout).
 - [x] Validación de filtros de productos.
 
-## Comandos que se utlizan
+## Comandos usados en Playwright
 
-- npx playwright test (Para ejecutar test)
+- npx playwright test (Para ejecutar todos los .spec.ts. Para ejecutar uno [npx playwright test test/test.spec.ts])
+- npx playwright show-report (Para ver los test report. Se debe de ejecutar )
+- npx playwright test --ui (Para ejecutar test con interfaz visual)
+- npx playwright test --debug (Para ejecutar el modo debug)
 
 ## Instalación y Configuraicon
 
