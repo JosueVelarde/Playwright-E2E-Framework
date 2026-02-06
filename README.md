@@ -1,6 +1,6 @@
 # Framework de Automatización E2E con Playwright & TypeScript
 
-Este proyecto es un framework de automatización de pruebas de extremo a extremo (E2E) desarrollado con **Playwright** y **TypeScript** para la plataforma SauceDemo. Se utilizan los navegadores FireFox, Chrome y Safari
+Este proyecto es un framework de automatización de pruebas de extremo a extremo (E2E) desarrollado con **Playwright** y **TypeScript** utilizándose los navegadores FireFox, Chrome y Safari
 
 ## Tecnologías utilizadas
 * **Lenguaje:** TypScript
@@ -8,7 +8,7 @@ Este proyecto es un framework de automatización de pruebas de extremo a extremo
 * **Patrón de diseño:** Page Object Model (POM)
 * **CI/CD:** GithHub Actions
 
-## Escenerios automatizados 05/02/2025
+## Escenerios automatizados 05/02/2025 (Página usada para las pruebas https://automationexercise.com/)
 - [x] Registro exitoso y manejo de errores.
 - [] Login existoso y manejo de errores.
 - [] Flujo completo de compra (Checkout).
