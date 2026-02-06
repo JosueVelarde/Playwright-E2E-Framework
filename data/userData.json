@@ -1,0 +1,18 @@
+{
+  "registerdUser": {
+    "name": "usuario",
+    "email": "correoprueba1770386143890$@gmail.com",
+    "password": "password123",
+    "dayBirth": "25",
+    "monthBirth": "August",
+    "yearBirth": "1995",
+    "firstName": "prueba",
+    "lastName": "pruebaPrueba",
+    "address": "calle prueba",
+    "country": "Canada",
+    "state": "state prueba",
+    "city": "cityPrueba",
+    "zipcode": 12345,
+    "mobile": 658187271
+  }
+}
