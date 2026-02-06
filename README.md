@@ -9,7 +9,7 @@ Este proyecto es un framework de automatización de pruebas de extremo a extremo
 * **CI/CD:** GithHub Actions
 * **IDE utilizado:** VS Code (Con la extensión Playwright Trace Viewr for Microsoft)
 
-## Escenerios automatizados 05/02/2025 (Página usada para las pruebas https://automationexercise.com/)
+## Escenarios automatizados 05/02/2025 (Página usada para las pruebas https://automationexercise.com/)
 - [x] Registro exitoso y manejo de errores.
 - [x] Login existoso y manejo de errores.
 - [] Flujo completo de compra (Checkout).
