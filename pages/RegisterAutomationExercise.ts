@@ -5,8 +5,6 @@ export class RegisterAutomationExercise {
     readonly email:Locator;
     readonly registerButton: Locator;
     readonly Name:Locator;
-    readonly tituloHombre:Locator;
-    readonly tituloMujer:Locator;
     readonly password:Locator;
     readonly dayBirth:Locator;
     readonly monthBirth:Locator;
@@ -33,8 +31,6 @@ export class RegisterAutomationExercise {
         //selectores que usan getByRole()
         this.registerButton = page.getByRole('button', {name: 'Signup'});
         this.Name = page.getByRole('textbox', { name: 'Name' });
-        this.tituloHombre = page.getByRole('radio', { name: 'Mr.' });
-        this.tituloMujer = page.getByRole('radio', { name: 'Mrs.' });
         this.password = page.getByRole('textbox', { name: 'Password *' });
         this.firstName = page.getByRole('textbox', { name: 'First name *' });
         this.lastName = page.getByRole('textbox', { name: 'Last name *' });
@@ -53,15 +49,11 @@ export class RegisterAutomationExercise {
     }
 
     async registerCompleto(
-        Name:string, emailAddress:string, password:string, firstName:string, lastName:string,
+        password:string, firstName:string, lastName:string,
         address:string, state:string, city:string, zipcode:number, mobileNumber:number, 
         dayBirth:string, monthBirht:string, yearBirth:string, country:string){
             //damos consentiemiento al mensaje de inicio de la pantalla
             await this.consentPage.click();
-            //rellenamos los datos con los campos "Name" y "Email Address" y luego se pulsa el boton "Signup"
-            await this.Name.fill(Name);
-            await this.email.fill(emailAddress);
-            await this.registerButton.click();
             //se abre una segunda opcion para rellenar los campos
             await this.password.fill(password);
             await this.dayBirth.selectOption(dayBirth);
@@ -77,9 +69,6 @@ export class RegisterAutomationExercise {
             await this.mobileNumber.fill(mobileNumber.toString());
             await this.createAccount.click();
         }
-    async login(email:string, password: string){
-
-    }
 
     async registerInicio(name:string, emailAddress:string){
             //damos consentiemiento al mensaje de inicio de la pantalla

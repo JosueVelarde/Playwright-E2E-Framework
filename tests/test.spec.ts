@@ -47,8 +47,11 @@ test.describe('Flujo de Registro', () =>{
       fs.writeFileSync('./data/userData.json', JSON.stringify(userData,null,2));
 
       await registerAutomationExercise.goTo();
+      await expect(page.getByText('New User Signup!')).toBeVisible();
+      await registerAutomationExercise.registerInicio(Name, emailAddress);
+      await expect(page.getByText('Enter Account Information')).toBeVisible();
       await registerAutomationExercise.registerCompleto(
-        Name, emailAddress, password, firstName, lastName, address, state, city, zipcode, mobile,
+        password, firstName, lastName, address, state, city, zipcode, mobile,
         dayBirth, monthBirth, yearBirth, country
       );
     });
