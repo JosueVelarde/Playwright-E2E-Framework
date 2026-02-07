@@ -21,7 +21,7 @@ export class LoginAutomationExercise{
 
     async login(email:string, pass:string){
         //damos consentiemiento al mensaje de inicio de la pantalla
-        await this.consentPage.click();
+        //await this.consentPage.click();
         await this.emailAddress.fill(email);
         await this.password.fill(pass);
         await this.buttonLogin.click();
