@@ -19,6 +19,3 @@
 
 8- Verificar que se ha registrado correctamente
 ![alt text](/test_cases/images/image-5.png)
-
-9- Pulsamos la opción "Logout" para deslogerse
-![alt text](/test_cases/images/image-6.png)

@@ -2,7 +2,7 @@ import {test, expect } from "@playwright/test";
 import {RegisterAutomationExercise} from '../pages/RegisterAutomationExercise';
 import {LoginAutomationExercise} from '../pages/LoginAutomationExercise';
 import * as fs from 'fs'; //importamos para manejar archivos
-import path from "path";
+import * as path from 'path';
    
 //definimos la ruta del archivo donde coger los datos
 const filePath = path.resolve(__dirname, '../data/userData.json');
@@ -62,6 +62,7 @@ test.describe('Flujo de Registro', () =>{
       const registerAutomationExercise = new RegisterAutomationExercise(page);
 
       await registerAutomationExercise.goTo();
+      await expect(page.getByText('New User Signup!')).toBeVisible();
       await registerAutomationExercise.registerInicio(Name, emailAddress);
      
      const message = await page.getByPlaceholder('Name').evaluate((element: HTMLInputElement) => element.validationMessage);
@@ -74,6 +75,7 @@ test.describe('Flujo de Registro', () =>{
       const registerAutomationExercise = new RegisterAutomationExercise(page);
 
       await registerAutomationExercise.goTo();
+      await expect(page.getByText('New User Signup!')).toBeVisible();
       await registerAutomationExercise.registerInicio(firstName, emailAddress);
      
       const message = await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').evaluate((element: HTMLInputElement) => element.validationMessage);
@@ -86,6 +88,7 @@ test.describe('Flujo de Registro', () =>{
       const registerAutomationExercise = new RegisterAutomationExercise(page);
 
       await registerAutomationExercise.goTo();
+      await expect(page.getByText('New User Signup!')).toBeVisible();
       await registerAutomationExercise.registerInicio(firstName, emailAddress);
      
       const message = await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').evaluate((element: HTMLInputElement) => element.validationMessage);
@@ -98,6 +101,7 @@ test.describe('Flujo de Registro', () =>{
       const registerAutomationExercise = new RegisterAutomationExercise(page);
 
       await registerAutomationExercise.goTo();
+      await expect(page.getByText('New User Signup!')).toBeVisible();
       await registerAutomationExercise.registerInicio(firstName, emailAddress);
      
       const message = await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').evaluate((element: HTMLInputElement) => element.validationMessage);
@@ -110,6 +114,7 @@ test.describe('Flujo completo del Login', () =>{
     const loginAutomationExercie = new LoginAutomationExercise(page);
 
     await loginAutomationExercie.goTo();
+    await expect(page.getByText('Login to your account')).toBeVisible();
     await loginAutomationExercie.login(user.email, user.password);
   });
 
@@ -117,6 +122,7 @@ test.describe('Flujo completo del Login', () =>{
     const loginAutomationExercie = new LoginAutomationExercise(page);
 
     await loginAutomationExercie.goTo();
+    await expect(page.getByText('Login to your account')).toBeVisible();
     await loginAutomationExercie.login('', user.password);
 
     const message = await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').evaluate((element: HTMLInputElement) => element.validationMessage);
@@ -127,6 +133,7 @@ test.describe('Flujo completo del Login', () =>{
     const loginAutomationExercie = new LoginAutomationExercise(page);
   
     await loginAutomationExercie.goTo();
+    await expect(page.getByText('Login to your account')).toBeVisible();
     await loginAutomationExercie.login(user.email, '');
 
     const message = await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').evaluate((element: HTMLInputElement) => element.validationMessage);
