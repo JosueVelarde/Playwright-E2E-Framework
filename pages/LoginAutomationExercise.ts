@@ -21,9 +21,16 @@ export class LoginAutomationExercise{
 
     async login(email:string, pass:string){
         //damos consentiemiento al mensaje de inicio de la pantalla
-        //await this.consentPage.click();
-        await this.emailAddress.fill(email);
-        await this.password.fill(pass);
-        await this.buttonLogin.click();
+        if(await this.page.getByRole('heading', { name: 'This site asks for consent to' }).isVisible()){
+            await this.consentPage.click();
+            await this.emailAddress.fill(email);
+            await this.password.fill(pass);
+            await this.buttonLogin.click();
+        }else{
+            await this.emailAddress.fill(email);
+            await this.password.fill(pass);
+            await this.buttonLogin.click();
+        }
+        
     }
 }

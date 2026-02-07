@@ -53,29 +53,55 @@ export class RegisterAutomationExercise {
         address:string, state:string, city:string, zipcode:number, mobileNumber:number, 
         dayBirth:string, monthBirht:string, yearBirth:string, country:string){
             //damos consentiemiento al mensaje de inicio de la pantalla
+            //comentar esta linea cuando se haga el commit en github
             //await this.consentPage.click();
             //se abre una segunda opcion para rellenar los campos
-            await this.password.fill(password);
-            await this.dayBirth.selectOption(dayBirth);
-            await this.monthBirth.selectOption(monthBirht);
-            await this.yearBirth.selectOption(yearBirth);
-            await this.firstName.fill(firstName);
-            await this.lastName.fill(lastName);
-            await this.address.fill(address);
-            await this.country.selectOption(country);
-            await this.state.fill(state);
-            await this.city.fill(city);
-            await this.zipcode.fill(zipcode.toString());
-            await this.mobileNumber.fill(mobileNumber.toString());
-            await this.createAccount.click();
+            if(await this.page.getByRole('heading', { name: 'This site asks for consent to' }).isVisible()){
+                await this.consentPage.click();
+                await this.password.fill(password);
+                await this.dayBirth.selectOption(dayBirth);
+                await this.monthBirth.selectOption(monthBirht);
+                await this.yearBirth.selectOption(yearBirth);
+                await this.firstName.fill(firstName);
+                await this.lastName.fill(lastName);
+                await this.address.fill(address);
+                await this.country.selectOption(country);
+                await this.state.fill(state);
+                await this.city.fill(city);
+                await this.zipcode.fill(zipcode.toString());
+                await this.mobileNumber.fill(mobileNumber.toString());
+                await this.createAccount.click();
+            }else{
+                await this.password.fill(password);
+                await this.dayBirth.selectOption(dayBirth);
+                await this.monthBirth.selectOption(monthBirht);
+                await this.yearBirth.selectOption(yearBirth);
+                await this.firstName.fill(firstName);
+                await this.lastName.fill(lastName);
+                await this.address.fill(address);
+                await this.country.selectOption(country);
+                await this.state.fill(state);
+                await this.city.fill(city);
+                await this.zipcode.fill(zipcode.toString());
+                await this.mobileNumber.fill(mobileNumber.toString());
+                await this.createAccount.click();
+            }
         }
 
     async registerInicio(name:string, emailAddress:string){
             //damos consentiemiento al mensaje de inicio de la pantalla
+            //comentar esta linea cuando se haga el commit en github
             //await this.consentPage.click();
             //rellenamos los datos con los campos "Name" y "Email Address" y luego se pulsa el boton "Signup"
-            await this.Name.fill(name);
-            await this.email.fill(emailAddress);
-            await this.registerButton.click();
+            if(await this.page.getByRole('heading', { name: 'This site asks for consent to' }).isVisible()){
+                await this.consentPage.click();
+                await this.Name.fill(name);
+                await this.email.fill(emailAddress);
+                await this.registerButton.click();
+            }else{
+                await this.Name.fill(name);
+                await this.email.fill(emailAddress);
+                await this.registerButton.click();
+            }
     }
 }
