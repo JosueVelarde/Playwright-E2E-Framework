@@ -72,7 +72,7 @@ export class RegisterAutomationExercise {
 
     async registerInicio(name:string, emailAddress:string){
             //damos consentiemiento al mensaje de inicio de la pantalla
-            await this.consentPage.click();
+            //await this.consentPage.click();
             //rellenamos los datos con los campos "Name" y "Email Address" y luego se pulsa el boton "Signup"
             await this.Name.fill(name);
             await this.email.fill(emailAddress);
