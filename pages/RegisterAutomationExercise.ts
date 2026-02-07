@@ -53,7 +53,7 @@ export class RegisterAutomationExercise {
         address:string, state:string, city:string, zipcode:number, mobileNumber:number, 
         dayBirth:string, monthBirht:string, yearBirth:string, country:string){
             //damos consentiemiento al mensaje de inicio de la pantalla
-            await this.consentPage.click();
+            //await this.consentPage.click();
             //se abre una segunda opcion para rellenar los campos
             await this.password.fill(password);
             await this.dayBirth.selectOption(dayBirth);
